@@ -92,18 +92,30 @@ namespace Messi_InfoTest
             else
                 return false;
         }
-        public int CompareTo(Messi_Disoccupato dis)
-        {
-            if (dis == null) return 1;
+        
+        public int CompareTo(Messi_Disoccupato other)
 
-            return punteggio().CompareTo(dis.punteggio());
-        }
-        public override bool CompareTo(Messi_Candidato k)
         {
-            if (this.punteggio() == k.punteggio())
-                return true;
+
+            if (other == null)
+
+                return 1;
+
+
+
+
+            if (this.punteggio() == other.punteggio())
+
+                return 0;
+
+            else if (this.punteggio() < other.punteggio())
+
+                return -1;
+
             else
-                return false;
+
+                return 1;
+
         }
     }
         
