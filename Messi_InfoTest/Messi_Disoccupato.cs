@@ -21,7 +21,7 @@ namespace Messi_InfoTest
             messi_voto = 0;
             messi_lode = false;
         }
-        private int Voto
+        public   int Voto
         {
             get { return messi_voto ; }
             set
@@ -33,7 +33,7 @@ namespace Messi_InfoTest
 
             }
         }
-        private bool Lode
+        public bool Lode
         {
             get { return messi_lode; }
             set
@@ -74,6 +74,36 @@ namespace Messi_InfoTest
                 return true;
 
             return false;
+        }
+
+        public override string ToString()
+        {
+            string s = messi_voto + ", " + messi_lode + ", ";
+            return s;
+        }
+        public bool Equals(Messi_Disoccupato x)
+        {
+            if (x == null)
+                return false;
+            if (this == x)
+                return true;
+            if (this.Matricola == x.Matricola || this.Nome == x.Nome || this.Voto == x.Voto || this.Lode == x.Lode)
+                return true;
+            else
+                return false;
+        }
+        public int CompareTo(Messi_Disoccupato dis)
+        {
+            if (dis == null) return 1;
+
+            return punteggio().CompareTo(dis.punteggio());
+        }
+        public override bool CompareTo(Messi_Candidato k)
+        {
+            if (this.punteggio() == k.punteggio())
+                return true;
+            else
+                return false;
         }
     }
         

@@ -17,13 +17,13 @@ namespace Messi_InfoTest
         }
        
         
-        private int Matricola
+        public int Matricola
         {
             get { return messi_matricola; }
             set { messi_matricola = value; }
         }
 
-        private string Nome
+        public   string Nome
         {
             get { return messi_nome; }
             set { messi_nome = value; }
@@ -58,8 +58,29 @@ namespace Messi_InfoTest
 
 
         public abstract int punteggio();
-        
-    }
+
+            public override string ToString()
+            {
+                string s = messi_matricola + ", " + messi_nome + ", ";
+                return s;
+            }
+        public bool Equals(Messi_Candidato x)
+        {
+            if (x == null)
+                return false;
+            if (this == x)
+                return true;
+            if (this.Matricola == x.Matricola || this.Nome == x.Nome)
+                return true;
+            else
+                return false;
+        }
+        public abstract bool CompareTo(Messi_Candidato k);
+        public override int GetHashCode()
+        {
+            return (Matricola, Nome).GetHashCode();
+        }
+    }                   
 
 
 }
