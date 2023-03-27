@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Messi_InfoTest
 {
-    internal abstract    class Messi_Candidato
+     public  abstract    class Messi_Candidato
     {
         private int messi_matricola;
         private string messi_nome;
         
-        public Messi_Candidato(string Messi_nome, int Messi_matricola)
+        public Messi_Candidato(string Messi_nome, int Messi_matricola) 
         {
             
         }
