@@ -11,5 +11,21 @@ namespace Messi_InfoTest
         {
 
         }
+        List<Messi_Candidato> lista = new List<Messi_Candidato>();
+        public void Add(Messi_Candidato a)
+        {
+            lista.Add(a);
+        }
+        
+
+        public void Visualizza(Messi_Candidato a)
+        {
+            lista.
+        }
+
+
+
+
+
     }
-}
+}   
